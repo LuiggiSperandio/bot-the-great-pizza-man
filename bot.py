@@ -7,6 +7,7 @@ offset =[(48, -63), (53, -163), (139, -114), (186, -28), (94, 18), (184, 71), (1
 right_offset =offset[:9]
 left_offset =offset[9:]
 print(len(offset))
+pyautogui.PAUSE = 0
 
 
 #return_mouse_position
@@ -26,35 +27,38 @@ while True:
         print(f'{currentMouseX}, {currentMouseY}')
         sleep(1)
     if keyboard.is_pressed('f1'):
-        x, y = pyautogui.locateCenterOnScreen('q.png', confidence=0.45)
+        currentMouseX, currentMouseY = pyautogui.position()
+        x, y = pyautogui.locateCenterOnScreen('q.png', grayscale=True, confidence=0.35)
         print(x,y)
         for index, item in enumerate(offset):
             x1 = x + item[0]
             y1 = y + item[1]
-            pyautogui.click(x1,y1)
-            if index == 17:
-                print('click')
-                pyautogui.click(x1,y1)
+            pyautogui.moveTo(x1,y1)
+            sleep(0.01)
+            pyautogui.click()
+        pyautogui.moveTo(currentMouseX, currentMouseY)
     if keyboard.is_pressed('f2'):
-        x, y = pyautogui.locateCenterOnScreen('q.png', confidence=0.45)
+        currentMouseX, currentMouseY = pyautogui.position()
+        x, y = pyautogui.locateCenterOnScreen('q.png', grayscale=True, confidence=0.35)
         print(x,y)
         for index, item in enumerate(left_offset):
             x1 = x + item[0]
             y1 = y + item[1]
-            pyautogui.click(x1,y1)
-            if index == 17:
-                print('click')
-                pyautogui.click(x1,y1)
+            pyautogui.moveTo(x1,y1)
+            sleep(0.01)
+            pyautogui.click()
+        pyautogui.moveTo(currentMouseX, currentMouseY)
     if keyboard.is_pressed('f3'):
-        x, y = pyautogui.locateCenterOnScreen('q.png', confidence=0.45)
+        currentMouseX, currentMouseY = pyautogui.position()
+        x, y = pyautogui.locateCenterOnScreen('q.png', grayscale=True, confidence=0.35)
         print(x,y)
         for index, item in enumerate(right_offset):
             x1 = x + item[0]
             y1 = y + item[1]
-            pyautogui.click(x1,y1)
-            if index == 17:
-                print('click')
-                pyautogui.click(x1,y1)
+            pyautogui.moveTo(x1,y1)
+            sleep(0.01)
+            pyautogui.click()
+        pyautogui.moveTo(currentMouseX, currentMouseY)
 
 
 #     print(image_loc)
