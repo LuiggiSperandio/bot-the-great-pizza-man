@@ -38,6 +38,7 @@ while True:
         if keyboard.is_pressed('f2'):
             currentMouseX, currentMouseY = pyautogui.position()
             x, y = pyautogui.locateCenterOnScreen('q.png', confidence=0.35)
+            y=836
             print(x,y)
             for index, item in enumerate(left_offset):
                 x1 = x + item[0]
@@ -49,6 +50,7 @@ while True:
         if keyboard.is_pressed('f3'):
             currentMouseX, currentMouseY = pyautogui.position()
             x, y = pyautogui.locateCenterOnScreen('q.png', confidence=0.35)
+            y=836
             print(x,y)
             for index, item in enumerate(right_offset):
                 x1 = x + item[0]
